@@ -25,7 +25,7 @@ export const config = {
     maxInstances: 1,
     capabilities: [
         {
-            platformName: 'iOS',
+            'platformName': 'iOS',
             'appium:app': 'storage:filename=LojaEBAC.ipa', // The filename of the mobile app
             'appium:deviceName': 'iPhone 12',
             'appium:platformVersion': '17',
@@ -50,5 +50,16 @@ export const config = {
     },
     afterTest: async function (test, context, { error, result, duration, passed, retries }) {
         await driver.takeScreenshot();
+    },
+    
+    beforeSuite: async function() {
+        let state = await driver.queryAppState("br.com.lojaebac")
+        if(state !== 4){
+            await driver.execute('mobile: launchApp', {bundleId: 'br.com.lojaebac'})
+        }
+    },
+
+    afterSuite: async function() {
+        await driver.execute('mobile: terminateApp', {bundleId: 'br.com.lojaebac'})
     }
 }

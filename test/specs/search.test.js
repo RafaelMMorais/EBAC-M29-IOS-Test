@@ -6,6 +6,8 @@ import browsePage from '../pageobjects/browse.page.js'
 import productPage from '../pageobjects/product.page.js'
 
 describe('Procurar produto', () => {
+    
+
     it('Deve procurar produtos', async () => {
         await homePage.search()
         await browsePage.searchInput.setValue('In')
