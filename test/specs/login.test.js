@@ -3,8 +3,8 @@ import homePage from '../pageobjects/home.page.js'
 import loginPage from '../pageobjects/login.page.js'
 import profilePage from '../pageobjects/profile.page.js'
 
-describe('My Login application', () => {
-    it('should login with valid credentials', async () => {
+describe('Login', () => {
+    it('Deve logar com sucesso', async () => {
         let profileTab = driver.isAndroid ? 'profile' : 'Account'
         await homePage.openMenu(profileTab)
         await loginPage.login('cliente@ebac.art.br', 'GD*peToHNJ1#c$sgk08EaYJQ')

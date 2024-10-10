@@ -13,7 +13,10 @@
   },
   "scripts": {
     "test": "wdio run ./wdio.conf.js",
-    "test:ios": "wdio run ./wdio.ios.conf.js"
+    "test:ios": "wdio run ./wdio.ios.conf.js",
+    "test:ios:login": "wdio run ./wdio.ios.conf.js --suite login",
+    "test:ios:product": "wdio run ./wdio.ios.conf.js --suite product",
+    "test:ios:search": "wdio run ./wdio.ios.conf.js --suite search"
   },
   "dependencies": {
     "allure-commandline": "^2.25.0"
