@@ -6,12 +6,13 @@ import 'dotenv/config';
 
 function getConfig() {
     switch (process.env.ENVIRONMENT) {
+        //testes locais
         case 'local':
             return localConf
-
+        //usar saucelabs
         case 'saucelabs':
             return sauceConf
-
+        //usar browserstack
         case 'browserstack':
             return bsConf
     }
